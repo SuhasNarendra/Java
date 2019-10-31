@@ -1,7 +1,7 @@
 public class SelectRandomNames {
 	public static void main(String[] args) {
-		String[] names = { "Basuraj", "Abhinav", "Abhishek", "Suhas", "Manoj", "Sachin", "Suchith", "Sachin B V",
-				"Sreerag", "Puskal" };
+		String[] names = { "John", "Peter", "Lucifer", "Oliver", "Jimmy", "Thomson", "William", "James",
+				"Lucas", "Benjamin" };
 		int result = (int) (Math.random() * names.length);
 		String name = names[result];
 		System.out.println("Your random name is " + name);
