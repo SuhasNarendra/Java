@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+public class DeleteElementInanArray {
+
+	public static void main(String[] args) {
+
+		int[] a = { 1, 2, 4, 3, 8, 5, 9, 6 };
+
+		System.out.print("Original Elements in the matrix are ");
+		for (int i = 0; i < a.length; i++) {
+			System.out.print(a[i] + " ");
+		}
+		System.out.println();
+		System.out.println("Enter the number to be deleted in the array");
+		Scanner sc = new Scanner(System.in);
+		int opt = sc.nextInt();
+		sc.close();
+
+		int[] newArr = new int[a.length - 1];
+		for (int i = 0; i < a.length; i++) {
+
+			if (a[i] == opt) {
+
+				for (int index = 0; index < i; index++) {
+					newArr[index] = a[index];
+				}
+				for (int j = i; j < a.length - 1; j++) {
+					newArr[j] = a[j + 1];
+				}
+
+			}
+
+		}
+
+		System.out.println("New Array");
+		for (int i = 0; i < newArr.length; i++) {
+			System.out.print(newArr[i] + " ");
+		}
+
+	}
+
+}
