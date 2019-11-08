@@ -1,0 +1,52 @@
+class Course {
+
+	String s1;
+	String s2;
+	String s3;
+
+	public Course(String s1, String s2, String s3) {
+		this.s1 = s1;
+		this.s2 = s2;
+		this.s3 = s3;
+	}
+}
+
+class Student implements Cloneable {
+	int id;
+	String name;
+	Course course;
+
+	public Student(int id, String name, Course course) {
+		this.id = id;
+		this.name = name;
+		this.course = course;
+	}
+
+	@Override
+	protected Object clone() throws CloneNotSupportedException {
+		return super.clone();
+	}
+}
+
+public class ShallowCopy {
+
+	public static void main(String[] args) {
+
+		Course maths = new Course("Integration", "Differentiation", "Trignometry");
+		Student student = new Student(1, "Suhas", maths);
+		Student student2 = null;
+
+		try {
+			student2 = (Student) student.clone();
+		} catch (CloneNotSupportedException e) {
+			e.printStackTrace();
+		}
+		System.out.println(student.course.s3);
+
+		student2.course.s3 = "Geometry";
+		System.out.println("s2" + student2.course.s3);
+
+		System.out.println("s" + student.course.s3);
+	}
+
+}
