@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class CamelCase {
+
+	public static void main(String[] args) {
+
+		System.out.println("Enter the String");
+		Scanner sc = new Scanner(System.in);
+		String string = sc.nextLine();
+		String result = "";
+		result = result + Character.toUpperCase(string.charAt(0));
+
+		for (int i = 1; i < string.length(); i++) {
+			char current = string.charAt(i);
+			char previous = string.charAt(i - 1);
+
+			if (previous == ' ') {
+				result = result + Character.toUpperCase(current);
+			} else
+				result = result + current;
+		}
+
+		System.out.println("final String: " + result);
+
+	}
+
+}
