@@ -1,0 +1,38 @@
+public class CountPairs {
+	public static void main(String args[]) {
+		System.out.println("Original Array");
+		int[] arr = { 1, 2, 3, 4, 5, 6, 7, 11, -2, -1, 10, 12 };
+		for (int i = 0; i < arr.length; i++)
+			System.out.print(arr[i] + " ");
+		System.out.println("\n");
+		int sum = 10;
+		getCount(arr, sum);
+	}
+
+	public static void getCount(int[] arr, int sum) {
+
+		int count = 0;
+
+		for (int i = 0; i < arr.length; i++) {
+			if ((arr[i] == sum)) {
+				System.out.println(arr[i]);
+				count++;
+			}
+			for (int j = i + 1; j < arr.length; j++) {
+				if (arr[i] + arr[j] == sum) {
+					System.out.println(arr[i] + " " + arr[j]);
+					count++;
+				}
+				for (int k = j + 1; k < arr.length; k++) {
+					if (arr[i] + arr[j] + arr[k] == sum) {
+						System.out.println(arr[i] + " " + arr[j] + " " + arr[k]);
+						count++;
+					}
+				}
+
+			}
+
+		}
+		System.out.println("Count of pairs is " + count);
+	}
+}
