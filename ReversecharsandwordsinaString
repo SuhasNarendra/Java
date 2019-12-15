@@ -1,0 +1,26 @@
+/*This programs is used for reversing each words in a string 
+ * and reversing each characters of words in a string */
+public class ReversecharsandwordsinaString {
+
+	public static void main(String[] args) {
+
+		String str = "I love java programming";
+		String[] words = str.split("\\s");
+		String ans = "";
+		String ans1 = "";
+
+		for (String string : words) {
+
+			StringBuilder sb = new StringBuilder(string);
+			sb.reverse();
+			ans += sb.toString() + " ";
+		}
+
+		System.out.println(ans);
+
+		for (int i = words.length - 1; i >= 0; i--) {
+			ans1 = ans1 + words[i] + " ";
+		}
+		System.out.println(ans1);
+	}
+}
