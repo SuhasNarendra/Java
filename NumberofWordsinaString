@@ -1,0 +1,18 @@
+/*This programs gives the number of words present in a string*/
+public class CountWords {
+
+	public static void main(String[] args) {
+
+		String s = "I love Java Programming!";
+		int spacecount = 0;
+
+		for (int i = 0; i < s.length(); i++) {
+
+			if (s.charAt(i) == ' ' && s.charAt(0) != ' ' && Character.isLetter(s.charAt(i + 1)))
+				spacecount++;
+		}
+
+		System.out.println(spacecount + 1);
+	}
+
+}
