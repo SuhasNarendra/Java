@@ -1,0 +1,31 @@
+
+public class EqualsvsDoubleEqualto {
+
+	public static void main(String[] args) {
+
+		String s = new String("suhas");
+		System.out.println("s.hascode " + s.hashCode());
+		String s2 = new String("suhas");
+		System.out.println("s2.hascode " + s2.hashCode());
+		String s3 = "suhas";
+		System.out.println("s and s3 " + s == s2);
+		System.out.println("s3.hascode " + s3.hashCode());
+		System.out.println("s.equals(s3) " + s.equals(s3));
+		System.out.println();
+		System.out.println("using== " + s == s2);
+
+		System.out.println("using .equals() " + s.equals(s2));
+
+		String st = new String("what");
+		String s1 = "what";
+		s = s.intern();
+		StringBuffer sbuf = new StringBuffer("what");
+		StringBuilder sbud = new StringBuilder("what");
+		System.out.println(((s.equals(sbud) + " " + sbud.equals(s))));
+
+		System.out.println(((st == s1) + " " + sbud == (st)));
+
+		System.out.println(((s.equals(sbuf) + " " + sbud.equals(sbuf))));
+	}
+
+}
