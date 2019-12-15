@@ -1,0 +1,20 @@
+/*This programs is used for reversing characters of each words in a string*/
+public class RevreseEachWord {
+
+	public static void main(String[] args) {
+
+		String s = "I love Java programming!";
+		String ans = "";
+		String[] words = s.split("\\s");
+		for (String string : words) {
+
+			StringBuilder sb = new StringBuilder(string);
+			sb.reverse();
+			// System.out.println(sb.reverse());
+			// System.out.print(string);
+			ans = ans + sb.toString() + " ";
+
+		}
+		System.out.println(ans);
+	}
+}
