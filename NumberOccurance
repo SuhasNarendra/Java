@@ -1,0 +1,43 @@
+import java.util.Arrays;
+
+/*This program will give occrance of each number in the array also it gives maximum occurance of the number in the array*/
+
+public class MaximumCount {
+
+	public static void main(String[] args) {
+
+		int[] arr = { 2, 1, 4, 3, 5, 4, 3, 2, 1, 1, 5, 3, 4, 3, 3, 4 };
+		int[] count = new int[arr.length];
+		final int random = 17;
+		Arrays.sort(arr);
+
+		for (int i = 0; i < arr.length; i++) {
+			count[i] = 1;
+			for (int j = i + 1; j < arr.length; j++) {
+				if (arr[i] == arr[j] && arr[j] != random) {
+					count[i]++;
+					arr[j] = random;
+				}
+			}
+		}
+		int max = 0;
+		for (int j = 0; j < count.length; j++) {
+
+			if (count[j] > max) {
+				max = count[j];
+			}
+			if (count[j] > 1) {
+				System.out.println(arr[j] + " repeated " + count[j] + " times ");
+			}
+
+		}
+
+		for (int i = 0; i < count.length; i++) {
+			if (count[i] == max) {
+				System.out.println("maximum repeated value is " + arr[i] + " repeated " + count[i] + " times");
+			}
+		}
+
+	}
+
+}
