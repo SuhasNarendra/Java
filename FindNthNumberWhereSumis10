@@ -1,0 +1,15 @@
+import java.util.Scanner;
+
+public class FindNthNumberWhereSumis10 {
+
+	public static void main(String[] args) {
+		int number = 19;
+		System.out.println("Enter the nth Digit to be found ");
+		Scanner sc = new Scanner(System.in);
+		int val = sc.nextInt();
+		int nth_num = 0;
+		nth_num = number + (val - 1) * 9;
+		System.out.println(nth_num);
+	}
+
+}
