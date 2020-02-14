@@ -1,0 +1,29 @@
+
+public class FindMajorityNumber {
+
+	public static void main(String[] args) {
+		int max = 0, major = 0;
+		int[] arr = { 1, 2, 2, 3, 2, 5, 6, 7, 9, 3 };
+		int[] count = new int[arr.length];
+
+		for (int i = 0; i < count.length; i++) {
+
+			for (int j = 0; j < count.length; j++) {
+
+				if (arr[i] == arr[j]) {
+					count[i]++;
+				}
+
+			}
+		}
+
+		for (int i = 0; i < count.length; i++) {
+
+			if (count[i] > max) {
+				max = count[i];
+				major = arr[i];
+			}
+		}
+	}
+
+}
