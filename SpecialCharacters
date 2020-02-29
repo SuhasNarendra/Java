@@ -1,0 +1,25 @@
+public class SpecialCharacters {
+
+	public static void main(String[] args) {
+
+		String str = "Nsuhas1996@gmail.com";
+		int upper = 0, lower = 0, special = 0, numbers = 0, vowels = 0;
+		for (int i = 0; i < str.length(); i++) {
+
+			if (str.charAt(i) >= 'a' && str.charAt(i) <= 'z')
+				lower++;
+			else if (str.charAt(i) >= 'A' && str.charAt(i) <= 'Z')
+				upper++;
+			else if (str.charAt(i) >= '0' && str.charAt(i) <= '9')
+				numbers++;
+			else
+				special++;
+		}
+
+		System.out.println("upper " + upper);
+		System.out.println("lower " + lower);
+		System.out.println("numbers " + numbers);
+		System.out.println("special " + special);
+	}
+
+}
