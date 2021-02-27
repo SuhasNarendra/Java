@@ -1,0 +1,19 @@
+public class HigestDenomination {
+
+	public static void main(String[] args) {
+		
+		int amount =3421;
+		int [] denominations= new int [] {2000,500,200,100,50,20,10,5,2,1};
+		int [] numbers=new int[denominations.length];
+		int i=0;
+		for(i=0;i<denominations.length;i++) {
+			if (amount >= denominations[i]) { 
+			numbers[i]=amount/denominations[i];
+			amount=amount-numbers[i]*denominations[i];
+			}
+		}
+		for (int j = 0; j < numbers.length; j++) {
+			System.out.println(denominations[j]+"->"+numbers[j]);
+		}
+	}
+}
