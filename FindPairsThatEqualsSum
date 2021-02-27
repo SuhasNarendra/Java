@@ -1,0 +1,28 @@
+import java.util.HashSet;
+import java.util.Set;
+
+public class Findpairs {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int [] arr= new int[] {1,2,7,9,-1,1};
+		int sum=2;
+		boolean value=false;
+		Set<Integer> set =new HashSet<>();
+		
+		for(int i=0;i<arr.length;i++) {
+			int temp=sum-arr[i];
+			
+			if(set.contains(temp)) {
+				value=true;
+				System.out.println("Pair found result "+"{"+arr[i]+" "+temp+"}");
+			}
+			else {
+				set.add(arr[i]);
+			}
+		}
+		System.out.println("Pair found result "+value);
+	}
+
+}
