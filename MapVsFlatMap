@@ -1,0 +1,34 @@
+package streams;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class MapVsFlatMap {
+
+	public static void main(String[] args) {
+		
+		List<List<Integer>> streams =new ArrayList<>();
+		List<Integer> e1 =new ArrayList<Integer>();
+		e1.add(1);
+		e1.add(2);
+		e1.add(3);
+		List<Integer> e2 =new ArrayList<Integer>();
+		e2.add(4);
+		e2.add(5);
+		e2.add(6);
+		
+		List<Integer> e3 =new ArrayList<Integer>();
+		e3.add(7);
+		e3.add(8);
+		e3.add(9);
+		streams.add(e1);
+		streams.add(e2);
+		streams.add(e3);
+		System.out.println(streams);
+		
+		System.out.println(streams.stream().map(value->value).collect(Collectors.toList()));
+		
+		System.out.println(streams.stream().flatMap(stream->stream.stream()).collect(Collectors.toList()));
+	}
+}
